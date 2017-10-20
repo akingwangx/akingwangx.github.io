@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="React," />
 
 
 
@@ -95,16 +95,18 @@
 
 
 
-<meta name="description" content="锻炼身体，磨砺思想">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Aking&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2017/10/index.html">
+<meta name="description" content="React严格定义了组件的生命周期会经历如下三个过程：  装载过程（Mount），组件第一次在DOM树渲染的过程。 更新过程（Update），当组件被重新渲染的过程。 卸载过程（Unmount），组件重DOM树中删除的过程。  执行这3个过程的调用函数就是声明周期函数。 装载过程该过程会依次调用如下函数：  constructor():ES6类的构造函数（为了初始化state或绑定this） ge">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生命周期学习与理解">
+<meta property="og:url" content="http://yoursite.com/2017/10/20/1020生命周期/index.html">
 <meta property="og:site_name" content="Aking&#39;s Blog">
-<meta property="og:description" content="锻炼身体，磨砺思想">
+<meta property="og:description" content="React严格定义了组件的生命周期会经历如下三个过程：  装载过程（Mount），组件第一次在DOM树渲染的过程。 更新过程（Update），当组件被重新渲染的过程。 卸载过程（Unmount），组件重DOM树中删除的过程。  执行这3个过程的调用函数就是声明周期函数。 装载过程该过程会依次调用如下函数：  constructor():ES6类的构造函数（为了初始化state或绑定this） ge">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-20T16:09:00.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Aking&#39;s Blog">
-<meta name="twitter:description" content="锻炼身体，磨砺思想">
+<meta name="twitter:title" content="生命周期学习与理解">
+<meta name="twitter:description" content="React严格定义了组件的生命周期会经历如下三个过程：  装载过程（Mount），组件第一次在DOM树渲染的过程。 更新过程（Update），当组件被重新渲染的过程。 卸载过程（Unmount），组件重DOM树中删除的过程。  执行这3个过程的调用函数就是声明周期函数。 装载过程该过程会依次调用如下函数：  constructor():ES6类的构造函数（为了初始化state或绑定this） ge">
 
 
 
@@ -134,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/10/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/20/1020生命周期/"/>
 
 
 
 
 
-  <title>归档 | Aking's Blog</title>
+  <title>生命周期学习与理解 | Aking's Blog</title>
   
 
 
@@ -159,7 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -253,111 +255,211 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 7 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-React" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/20/1020生命周期/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王 鑫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/12.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aking's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/10/20/1020生命周期/" itemprop="url">
-              
-                <span itemprop="name">生命周期学习与理解</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">生命周期学习与理解</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-20T23:52:12+08:00"
-              content="2017-10-20" >
-          10-20
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-20T23:52:12+08:00">
+                2017-10-20
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-React" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/19/1019react1/" itemprop="url">
-              
-                <span itemprop="name">React学习第一天</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-19T21:10:12+08:00"
-              content="2017-10-19" >
-          10-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p>React严格定义了组件的生命周期会经历如下三个过程：</p>
+<ul>
+<li>装载过程（Mount），组件第一次在DOM树渲染的过程。</li>
+<li>更新过程（Update），当组件被重新渲染的过程。</li>
+<li>卸载过程（Unmount），组件重DOM树中删除的过程。</li>
+</ul>
+<p>执行这3个过程的调用函数就是声明周期函数。</p>
+<h2 id="装载过程"><a href="#装载过程" class="headerlink" title="装载过程"></a>装载过程</h2><p>该过程会依次调用如下函数：</p>
+<ul>
+<li>constructor():ES6类的构造函数（为了初始化state或绑定this）</li>
+<li>getInitialState():ES5中初始化state。</li>
+<li>getDefaultProps():ES5中初始化props。在ES6中使用defaultProps()方法。</li>
+<li>componentWillMount():在组件被挂载前调用。只执行一次。</li>
+<li>render():渲染组件，必须实现该方法。</li>
+<li>componentDidMount():在组件装载后调用。这时已经生成了真实的DOM节点。只执行一次。</li>
+</ul>
+<h2 id="更新过程"><a href="#更新过程" class="headerlink" title="更新过程"></a>更新过程</h2><p>当组件的props或者state改变时就会触发组件的更新过程。</p>
+<p>更新过程会依次执行如下函数：</p>
+<ul>
+<li>componentWillReceiveProps(nextProps):当父组件的render()方法执行后就会触发该方法。初始化时不调用。</li>
+<li>shouldComponentUpdate(nextProps,nextState):当props改变或state改变时调用，初始化时不掉用，返回boolean。true表示继续执行render方法，fasle表示放弃本次渲染。</li>
+<li>render():渲染组件。</li>
+</ul>
+<h2 id="卸载过程"><a href="#卸载过程" class="headerlink" title="卸载过程"></a>卸载过程</h2><p>componentWillUnmount():将组件从DOM树移出，防止内存溢出。</p>
+<p><em>代码演示</em></p>
+<pre><code> 
+class App extends React.Component {
+
+    constructor(props){
+        super(props)
+        console.log("---初始化组件---")
+    }
+
+    componentWillMount(){
+        console.log("---组件挂载前---")
+    }
+
+    componentDidMount(){
+        console.log("---组件挂载后---")
+    }
+
+    componentWillReceiveProps(nextProps){
+        console.log("---父组件重新渲染---")
+    }
+
+    shouldComponentUpdate(nextProps,nextState){
+        console.log("---组件接受到重绘状态---")
+        if(this.props != nextProps || this.state != nextState)
+        return true
+    }
+
+
+    render() {
+        console.log("---组件渲染---")
+        const props = this.props 
+        return (
+           &ltdiv>
+           &lth1>王鑫啦啦啦&lt/h1>
+           &lt/div>
+        )
+    }
+}
+</code></pre>
+
+<p>目前就总结了这么多，还看了state和props，等明天多用用再写总结。</p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag"># React</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/19/1019react1/" rel="next" title="React学习第一天">
+                <i class="fa fa-chevron-left"></i> React学习第一天
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -365,6 +467,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDcxMi83MjY2"></div>
+    
+  </div>
+
 
         </div>
         
@@ -385,8 +493,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -479,6 +596,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#装载过程"><span class="nav-number">1.</span> <span class="nav-text">装载过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新过程"><span class="nav-number">2.</span> <span class="nav-text">更新过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载过程"><span class="nav-number">3.</span> <span class="nav-text">卸载过程</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -625,6 +758,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -653,6 +790,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
