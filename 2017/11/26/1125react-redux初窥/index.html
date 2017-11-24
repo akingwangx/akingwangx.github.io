@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JS," />
+  <meta name="keywords" content="React," />
 
 
 
@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="今天又过了一遍DOM编程艺术这本书，打算开始做两个项目，由于对之前做的静态页面不太满意，所以决定重构他们，然后在导航栏加JS时候写了如下代码：  window.onload = function () {     //菜单下拉and收起     //选取所有需要下拉的li     var ali = document.getElementById(&quot;nav&quot;).children[0].childr">
-<meta name="keywords" content="JS">
+<meta name="description" content="前言几天前实现了项目功能的需求后就开始学习Redux，开头两日很是痛苦，看的很懵，冷静的想了很久才稍微想通了一点，本篇文章主要讲一下自己理解了的React-Redux，至于前置的知识flux，redux什么的就不展开了，一搜一大推(虽然React-Redux也是。。)，建议知乎上搜下redux，大佬们举的例子还是有助于理解的，现在我们来开始学习React-Redux吧。 想放在最开始讲的是redu">
+<meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用原生JS实现导航菜单下拉和收起">
-<meta property="og:url" content="http://yoursite.com/2017/09/18/0913 js实现导航下拉/index.html">
+<meta property="og:title" content="React-Redux初窥">
+<meta property="og:url" content="http://yoursite.com/2017/11/26/1125react-redux初窥/index.html">
 <meta property="og:site_name" content="Aking&#39;s Blog">
-<meta property="og:description" content="今天又过了一遍DOM编程艺术这本书，打算开始做两个项目，由于对之前做的静态页面不太满意，所以决定重构他们，然后在导航栏加JS时候写了如下代码：  window.onload = function () {     //菜单下拉and收起     //选取所有需要下拉的li     var ali = document.getElementById(&quot;nav&quot;).children[0].childr">
+<meta property="og:description" content="前言几天前实现了项目功能的需求后就开始学习Redux，开头两日很是痛苦，看的很懵，冷静的想了很久才稍微想通了一点，本篇文章主要讲一下自己理解了的React-Redux，至于前置的知识flux，redux什么的就不展开了，一搜一大推(虽然React-Redux也是。。)，建议知乎上搜下redux，大佬们举的例子还是有助于理解的，现在我们来开始学习React-Redux吧。 想放在最开始讲的是redu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-29T02:27:54.250Z">
+<meta property="og:updated_time" content="2017-11-24T17:28:17.525Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用原生JS实现导航菜单下拉和收起">
-<meta name="twitter:description" content="今天又过了一遍DOM编程艺术这本书，打算开始做两个项目，由于对之前做的静态页面不太满意，所以决定重构他们，然后在导航栏加JS时候写了如下代码：  window.onload = function () {     //菜单下拉and收起     //选取所有需要下拉的li     var ali = document.getElementById(&quot;nav&quot;).children[0].childr">
+<meta name="twitter:title" content="React-Redux初窥">
+<meta name="twitter:description" content="前言几天前实现了项目功能的需求后就开始学习Redux，开头两日很是痛苦，看的很懵，冷静的想了很久才稍微想通了一点，本篇文章主要讲一下自己理解了的React-Redux，至于前置的知识flux，redux什么的就不展开了，一搜一大推(虽然React-Redux也是。。)，建议知乎上搜下redux，大佬们举的例子还是有助于理解的，现在我们来开始学习React-Redux吧。 想放在最开始讲的是redu">
 
 
 
@@ -136,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/18/0913 js实现导航下拉/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/26/1125react-redux初窥/"/>
 
 
 
 
 
-  <title>用原生JS实现导航菜单下拉和收起 | Aking's Blog</title>
+  <title>React-Redux初窥 | Aking's Blog</title>
   
 
 
@@ -264,12 +264,12 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-React" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/18/0913 js实现导航下拉/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/26/1125react-redux初窥/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王 鑫">
@@ -286,7 +286,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">用原生JS实现导航菜单下拉和收起</h1>
+          <h1 class="post-title" itemprop="name headline">React-Redux初窥</h1>
         
 
         <div class="post-meta">
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T11:20:15+08:00">
-                2017-09-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-26T00:40:12+08:00">
+                2017-11-26
               </time>
             
 
@@ -336,66 +336,39 @@
       
 
       
-        <p>今天又过了一遍DOM编程艺术这本书，打算开始做两个项目，由于对之前做的静态页面不太满意，所以决定重构他们，然后在导航栏加JS时候写了如下代码：</p>
-<pre> window.onload = function () {
-    //菜单下拉and收起
-    //选取所有需要下拉的li
-    var ali = document.getElementById("nav").children[0].children;
-    //遍历该li数组 
-    for (var i = 0; i < ali.length; i++) {
-        bao(ali[i]);
-    }
-    function bao(obj) {
-        //取下拉菜单元素
-        var ul = obj.lastElementChild;
-        //赋初始值
-        ul.style.height = "0px";
-        //取实际菜单元素实际高度！
-        var oheight = ul.scrollHeight;
-        var t;
-        //移入事件
-        obj.onmouseenter = function () {
-            t = "open";
-            open();
-            //移入后样式稍微调整，想把菜单字变成白色没成功
-            ul.style.marginLeft = "-10px";
-            obj.style.backgroundColor = "#0365AC";
-            function open() {
-                //得到目前的菜单高度，变化后再赋给下拉菜单
-                var nowheight = parseFloat(ul.style.height);
-                nowheight += 3;
-                ul.style.height = nowheight + "px";
-                if (nowheight < oheight) {
-                    if (t == "open") {
-                        setTimeout(open, 1);
-                    }
-                } else {
-                    ul.style.height = oheight + "px";
-                }
-            }
-        }
-        obj.onmouseleave = function () {
-            t = "close";
-            close();
-            obj.style.backgroundColor = "#fff";
-            function close() {
-                var nowheight = parseFloat(ul.style.height);
-                nowheight -= 3;
-                ul.style.height = nowheight + "px";
-                if (nowheight > 0) {
-                    if (t == "close") {
-                        setTimeout(close, 1);
-                    } else {
-                        ul.style.height = "0px";
-                    }
-                }
-            }
-        }
-    }
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>几天前实现了项目功能的需求后就开始学习Redux，开头两日很是痛苦，看的很懵，冷静的想了很久才稍微想通了一点，本篇文章主要讲一下自己理解了的React-Redux，至于前置的知识flux，redux什么的就不展开了，一搜一大推(虽然React-Redux也是。。)，建议知乎上搜下redux，大佬们举的例子还是有助于理解的，现在我们来开始学习React-Redux吧。</p>
+<p>想放在最开始讲的是redux里有个比较重要的函数：reducer。它主要负责接收两个参数，第一个参数为数据(state初始状态)，第二个参数为action操作对象，reducer要return的是新的state，而不能直接在原有state上面做修改~</p>
+<p>一个reducer：</p>
+<pre>
+let reducer-wx=function(state=0,action){
+  switch(action.type){
+    case:'一个action':
+       return state+action.value;
+    default
+       return state;
+  }
 }
- </pre>
+</pre>
 
-<p>太累了就先睡了，明天学习图片轮播的JS  加油~</p>
+
+<p>刚看到这个reducer我也是很不理解它是干嘛的，以为又是得死记的API，记住怎么用什么的，结果那一天又是store、dispatch、createStore、action、reducer的记得记得就混乱了，效率低的过完了一天，第二天查了资料发现自己还是js基础不牢靠，有一个Array.protoType.reducer方法自己竟然都不知道，然后看完之后发现稍微能理解一点redux里的reducer函数了。</p>
+<h2 id="使用React-Redux"><a href="#使用React-Redux" class="headerlink" title="使用React-Redux"></a>使用React-Redux</h2><p>React-Redux在我理解就是提供了两个很有用的方法，一个是Provider，一个是connect，先来讲Prvoider，我理解的很简单，就是用 &lt; Proviider&gt;标签将整个React.Dom要渲染的最外层组件包裹起来，然后属性上加上store属性，让所有子组件可以用this.props接收到redux里store的那些方法。</p>
+<p>connect就稍复杂一点，他看起来是这个样子的：<pre><br>let App=connect(接受参数完成配置阶段，包裹成一个新东西后跟后面的组件建立联系)(要连接的组件)<br></pre></p>
+<p>connect(a,b)(component)中a参数用来接受store中的数据，通过props传给React组件(一个具体的state数据)，b参数用来接受action发出的那个定义的动作，通常是const一个全大写的名字然后通过函数返回</p>
+<p>然后这个connect可以写成装饰器的形式我觉得很简洁懂了的话也好看</p>
+<pre>
+@connect(state=>({num:state}),
+         {b参数}
+)
+class App extends React.Component{
+  ...
+  这里如果有用到事件的话用this.props.b参数名来接收b那个action，等于用Provider省去了dispatch，直接就可以用props接收到action
+  例：&ltButton onClick={this.props.addState}>yo&lt/Button>
+} 
+</pre>
+
+
+<p> 以上就是我对React-Redux的浅显理解，1点半了眼睛有点睁不开，就先睡了，下周实践后再做总结吧，这个写的有点辣眼睛。。</p>
 
       
     </div>
@@ -413,7 +386,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JS/" rel="tag"># JS</a>
+            <a href="/tags/React/" rel="tag"># React</a>
           
         </div>
       
@@ -426,8 +399,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/08/自定义博客页面样式/" rel="next" title="自定义博客页面样式">
-                <i class="fa fa-chevron-left"></i> 自定义博客页面样式
+              <a href="/2017/10/20/1020生命周期/" rel="next" title="生命周期学习与理解">
+                <i class="fa fa-chevron-left"></i> 生命周期学习与理解
               </a>
             
           </div>
@@ -435,10 +408,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/18/圣杯布局/" rel="prev" title="圣杯布局">
-                圣杯布局 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -492,8 +461,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -586,6 +564,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用React-Redux"><span class="nav-number">2.</span> <span class="nav-text">使用React-Redux</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
