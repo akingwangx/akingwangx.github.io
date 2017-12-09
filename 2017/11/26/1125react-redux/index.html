@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="今天是实习的第一天，也是真的开始学React技术栈的第一天，感觉公司每个人都干劲十足，很害怕实习期过了没跟上脚步被淘汰呢，话不多说，开始~ importimport React from &apos;react&apos;；   import ReactDOM from &apos;react-dom&apos;;   从头开始看，首先是在 JS 当中引用其他库文件的语法变化。之前我们一般都是通过 require 方法把库文件导出的方法">
+<meta name="description" content="前言几天前实现了项目功能的需求后就开始学习Redux，开头两日很是痛苦，看的很懵，冷静的想了很久才稍微想通了一点，本篇文章主要讲一下自己理解了的React-Redux，至于前置的知识flux，redux什么的就不展开了，一搜一大推(虽然React-Redux也是。。)，建议知乎上搜下redux，大佬们举的例子还是有助于理解的，现在我们来开始学习React-Redux吧。 想放在最开始讲的是redu">
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React学习第一天">
-<meta property="og:url" content="http://yoursite.com/2017/10/19/1019react1/index.html">
+<meta property="og:title" content="React-Redux初窥">
+<meta property="og:url" content="http://yoursite.com/2017/11/26/1125react-redux/index.html">
 <meta property="og:site_name" content="Aking&#39;s Blog">
-<meta property="og:description" content="今天是实习的第一天，也是真的开始学React技术栈的第一天，感觉公司每个人都干劲十足，很害怕实习期过了没跟上脚步被淘汰呢，话不多说，开始~ importimport React from &apos;react&apos;；   import ReactDOM from &apos;react-dom&apos;;   从头开始看，首先是在 JS 当中引用其他库文件的语法变化。之前我们一般都是通过 require 方法把库文件导出的方法">
+<meta property="og:description" content="前言几天前实现了项目功能的需求后就开始学习Redux，开头两日很是痛苦，看的很懵，冷静的想了很久才稍微想通了一点，本篇文章主要讲一下自己理解了的React-Redux，至于前置的知识flux，redux什么的就不展开了，一搜一大推(虽然React-Redux也是。。)，建议知乎上搜下redux，大佬们举的例子还是有助于理解的，现在我们来开始学习React-Redux吧。 想放在最开始讲的是redu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-15T08:38:31.924Z">
+<meta property="og:updated_time" content="2017-11-24T17:28:17.525Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React学习第一天">
-<meta name="twitter:description" content="今天是实习的第一天，也是真的开始学React技术栈的第一天，感觉公司每个人都干劲十足，很害怕实习期过了没跟上脚步被淘汰呢，话不多说，开始~ importimport React from &apos;react&apos;；   import ReactDOM from &apos;react-dom&apos;;   从头开始看，首先是在 JS 当中引用其他库文件的语法变化。之前我们一般都是通过 require 方法把库文件导出的方法">
+<meta name="twitter:title" content="React-Redux初窥">
+<meta name="twitter:description" content="前言几天前实现了项目功能的需求后就开始学习Redux，开头两日很是痛苦，看的很懵，冷静的想了很久才稍微想通了一点，本篇文章主要讲一下自己理解了的React-Redux，至于前置的知识flux，redux什么的就不展开了，一搜一大推(虽然React-Redux也是。。)，建议知乎上搜下redux，大佬们举的例子还是有助于理解的，现在我们来开始学习React-Redux吧。 想放在最开始讲的是redu">
 
 
 
@@ -136,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/19/1019react1/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/26/1125react-redux/"/>
 
 
 
 
 
-  <title>React学习第一天 | Aking's Blog</title>
+  <title>React-Redux初窥 | Aking's Blog</title>
   
 
 
@@ -269,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/19/1019react1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/26/1125react-redux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王 鑫">
@@ -286,7 +286,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">React学习第一天</h1>
+          <h1 class="post-title" itemprop="name headline">React-Redux初窥</h1>
         
 
         <div class="post-meta">
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T21:10:12+08:00">
-                2017-10-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-26T00:40:12+08:00">
+                2017-11-26
               </time>
             
 
@@ -336,124 +336,39 @@
       
 
       
-        <p>今天是实习的第一天，也是真的开始学React技术栈的第一天，感觉公司每个人都干劲十足，很害怕实习期过了没跟上脚步被淘汰呢，话不多说，开始~</p>
-<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><pre>import React from 'react'；</pre>
-
-
-<pre>import ReactDOM from 'react-dom'; </pre>
-
-<p>从头开始看，首先是在 JS 当中引用其他库文件的语法变化。之前我们一般都是通过 require 方法把库文件导出的方法保存在一个变量中。在 ES6 当中引入了一组个新的关键字 import/export，在文件的开头引入我们需要使用的模块或方法。</p>
-<p>我的理解是import导入常量、函数、文件、模块等，而export与export为导出常量、函数、文件、模块。在一个文件或者模块中export、import可以有多个，但expor只可以有一个，通过export导出的时候，导入时需要加{}，而export default则不需要。</p>
-<p>然后是ES6的let和const方法，从第一天的学习来看const用的很多，基本每次组件定义常量都会使用，let暂时还没有用到。</p>
-<p>然后是class，在React之前的版本中，多使用createClass的方法来声明一个组件，不过目前好像还得加别的包才可以使用，导致我找了半天视频都是旧的使用这个方法的，浪费了很多时间。<br>这里学习了类定义组件的方法:</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>几天前实现了项目功能的需求后就开始学习Redux，开头两日很是痛苦，看的很懵，冷静的想了很久才稍微想通了一点，本篇文章主要讲一下自己理解了的React-Redux，至于前置的知识flux，redux什么的就不展开了，一搜一大推(虽然React-Redux也是。。)，建议知乎上搜下redux，大佬们举的例子还是有助于理解的，现在我们来开始学习React-Redux吧。</p>
+<p>想放在最开始讲的是redux里有个比较重要的函数：reducer。它主要负责接收两个参数，第一个参数为数据(state初始状态)，第二个参数为action操作对象，reducer要return的是新的state，而不能直接在原有state上面做修改~</p>
+<p>一个reducer：</p>
 <pre>
-
-class Welcome extends React.Component{
-  render(){
-    return &lth1>Hello,{this.props.name}&lt/h1>;
+let reducer-wx=function(state=0,action){
+  switch(action.type){
+    case:'一个action':
+       return state+action.value;
+    default
+       return state;
   }
 }
-const element=&ltWelcome name="wangxin"/>;
-
-ReactDOM.render(
-  element,
-  document.getElementById("root")
-) </pre>
+</pre>
 
 
-<p>然后学习了在JSX中使用表达式</p>
+<p>刚看到这个reducer我也是很不理解它是干嘛的，以为又是得死记的API，记住怎么用什么的，结果那一天又是store、dispatch、createStore、action、reducer的记得记得就混乱了，效率低的过完了一天，第二天查了资料发现自己还是js基础不牢靠，有一个Array.protoType.reducer方法自己竟然都不知道，然后看完之后发现稍微能理解一点redux里的reducer函数了。</p>
+<h2 id="使用React-Redux"><a href="#使用React-Redux" class="headerlink" title="使用React-Redux"></a>使用React-Redux</h2><p>React-Redux在我理解就是提供了两个很有用的方法，一个是Provider，一个是connect，先来讲Prvoider，我理解的很简单，就是用 &lt; Proviider&gt;标签将整个React.Dom要渲染的最外层组件包裹起来，然后属性上加上store属性，让所有子组件可以用this.props接收到redux里store的那些方法。</p>
+<p>connect就稍复杂一点，他看起来是这个样子的：<pre><br>let App=connect(接受参数完成配置阶段，包裹成一个新东西后跟后面的组件建立联系)(要连接的组件)<br></pre></p>
+<p>connect(a,b)(component)中a参数用来接受store中的数据，通过props传给React组件(一个具体的state数据)，b参数用来接受action发出的那个定义的动作，通常是const一个全大写的名字然后通过函数返回</p>
+<p>然后这个connect可以写成装饰器的形式我觉得很简洁懂了的话也好看</p>
 <pre>
-// 在JSX中使用表达式
-// function formatName(user){
-//   return user.firstName+" "+user.lastName;
-// }
-// const user={
-//   firstName:'Harper',
-//   lastName:'Jax'
-// };
-// const element=(
-//   &lth1>
-//     Hello,{formatName(user)}!
-//   &lt/h1>
-// );
-// ReactDOM.render(
-//   element,
-//   document.getElementById("root")
-// )</pre>
+@connect(state=>({num:state}),
+         {b参数}
+)
+class App extends React.Component{
+  ...
+  这里如果有用到事件的话用this.props.b参数名来接收b那个action，等于用Provider省去了dispatch，直接就可以用props接收到action
+  例：&ltButton onClick={this.props.addState}>yo&lt/Button>
+} 
+</pre>
 
 
-
-<p>React会尽力少地比较，然后根据虚拟DOM只改变真实DOM中需要被改变的部分。React也藉此实现了它的高效率，高性能,如下面这个例子，只改变秒数而不改变其他。</p>
-<pre>
-// 更新元素渲染：React只会更新必要的部分
-// function time(){
-//   const element=(
-//     &ltdiv>
-//       &lth1>Hello world!&lt/h1>
-//       &lth2>It is{new Date().toLocaleTimeString()}&lt/h2>
-//     &lt/div>
-//   )
-//   ReactDOM.render(
-//     element,
-//     document.getElementById('root')
-//   );
-// }
-// setInterval(time,1000);</pre>
-
-<p>通过这个例子总结出来取值的时候用{},取函数的时候（估计这么说不对）用标签：</p>
-<pre>
-// function Welcome(props){
-//   return(
-//     &ltdiv>
-//       &lth1>Hello,{props.name}&lt/h1>
-//       &lth3>{props.age}&lt/h3>
-//     &lt/div>
-//   )
-// }
-// ReactDOM.render(
-//   &ltWelcome name="wangxin" age="1"/>,
-//   document.getElementById("root")
-// )</pre>
-
-
-<p>提取组件：  可以将组件分为更小的组件</p>
-<p>提取组件一开始看起来像是一项单调乏味的工作，但是在大型应用中，构建可复用的组件完全是值得的。当你的UI中有一部分重复使用了好几次（比如，Button、Panel、Avatar），或者其自身就足够复杂（比如，App、FeedStory、Comment），类似这些都是抽象成一个可复用组件的绝佳选择，这也是一个比较好的做法</p>
-<pre>function forcat(date){
-  return date.toLocaleDateString();
-}
-function Comment(props){
-  return(
-    &ltdiv className="Comment">
-      &ltdiv className="UserInfo">
-        &ltimg src={props.aut.url} alt={props.aut.name} className="AV"/>
-       &ltdiv className="UserName">{props.aut.name}&lt/div>  
-      &lt/div>
-      &ltdiv className="comment-text">{props.text}&lt/div>
-      &ltdiv className="comment-date">{forcat(props.date)}&lt/div>
-
-    &lt/div>
-  )
-}
-const author={
-  date:new Date(),
-  text:"I hope you are happy!",
-  aut:{
-    name:"cat",
-    url:"http://placekitten.com/g/64/64"
-  }
-}
-ReactDOM.render(
-  &ltdiv>
-    &ltComment date={author.date} text={author.text} aut={author.aut}/>
-  &lt/div>,
-  document.getElementById("root")
-)</pre>
-
-
-<p>目前就掌握了这几个知识点，明天把没掌握好的Props、State、还有目前用到的生命周期钩子</p>
-<p>componentDidMount()</p>
-<p>componentWillUnmount()</p>
-<p>明天把这些好好理解一下，然后问下杰哥那个任务从哪里看起比较好下手。加油~</p>
+<p> 以上就是我对React-Redux的浅显理解，1点半了眼睛有点睁不开，就先睡了，下周实践后再做总结吧，这个写的有点辣眼睛。。</p>
 
       
     </div>
@@ -484,8 +399,8 @@ ReactDOM.render(
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/21/实验/" rel="next" title="CSS3实现动态扫光文字">
-                <i class="fa fa-chevron-left"></i> CSS3实现动态扫光文字
+              <a href="/2017/10/20/1020/" rel="next" title="生命周期学习与理解">
+                <i class="fa fa-chevron-left"></i> 生命周期学习与理解
               </a>
             
           </div>
@@ -494,8 +409,8 @@ ReactDOM.render(
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/20/1020/" rel="prev" title="生命周期学习与理解">
-                生命周期学习与理解 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/28/1127vscode/" rel="prev" title="vscode开发React小技巧">
+                vscode开发React小技巧 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -663,7 +578,7 @@ ReactDOM.render(
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#import"><span class="nav-number">1.</span> <span class="nav-text">import</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用React-Redux"><span class="nav-number">2.</span> <span class="nav-text">使用React-Redux</span></a></li></ol></div>
             
 
           </div>
