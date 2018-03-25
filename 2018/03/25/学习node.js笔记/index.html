@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1.导入&amp;amp;&amp;amp;导出 node.js对外暴露模块用moudle.exports,例如: 123456789101112var counter=arr=&amp;gt;&amp;#123;return arr.length&amp;#125;module.exports.counter=counter或者moudule.exports=&amp;#123;    counter:counter,    &amp;#125;//">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aking&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/2018/03/25/学习node.js笔记/index.html">
+<meta property="og:site_name" content="Aking&#39;s Blog">
+<meta property="og:description" content="1.导入&amp;amp;&amp;amp;导出 node.js对外暴露模块用moudle.exports,例如: 123456789101112var counter=arr=&amp;gt;&amp;#123;return arr.length&amp;#125;module.exports.counter=counter或者moudule.exports=&amp;#123;    counter:counter,    &amp;#125;//">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-14T16:39:25.963Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Aking&#39;s Blog">
+<meta name="twitter:description" content="1.导入&amp;amp;&amp;amp;导出 node.js对外暴露模块用moudle.exports,例如: 123456789101112var counter=arr=&amp;gt;&amp;#123;return arr.length&amp;#125;module.exports.counter=counter或者moudule.exports=&amp;#123;    counter:counter,    &amp;#125;//">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/25/学习node.js笔记/"/>
+
+
+
+
+
+  <title> | Aking's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aking's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/25/学习node.js笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王 鑫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/12.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aking's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T22:50:22+08:00">
+                2018-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1.导入&amp;&amp;导出</p>
+<p>node.js对外暴露模块用moudle.exports,例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var counter=arr=&gt;&#123;</div><div class="line">return arr.length</div><div class="line">&#125;</div><div class="line">module.exports.counter=counter</div><div class="line">或者</div><div class="line">moudule.exports=&#123;</div><div class="line">    counter:counter,</div><div class="line">    </div><div class="line">&#125;</div><div class="line">//另外一个文件想引用这个模块用require</div><div class="line">var moudle=require(&apos;./count&apos;)</div><div class="line">console.log(moudle.counter([&apos;1&apos;,&apos;2&apos;]))     //2</div></pre></td></tr></table></figure>
+<p>2.事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">var events = require(&apos;events&apos;);//事件库</div><div class="line">var util = require(&apos;util&apos;); //工具库</div><div class="line"></div><div class="line">var Person = function(name) &#123; //一个Person类</div><div class="line">    this.name = name</div><div class="line">&#125;</div><div class="line"></div><div class="line">util.inherits(Person, events.EventEmitter);//让Person类继承事件</div><div class="line"></div><div class="line">var xiaoming = new Person(&apos;xiaoming&apos;);</div><div class="line">var lili = new Person(&apos;lili&apos;);</div><div class="line">var lucy = new Person(&apos;lucy&apos;);</div><div class="line"></div><div class="line">var person = [xiaoming, lili, lucy];</div><div class="line"></div><div class="line">person.forEach(function(person) &#123;</div><div class="line">    person.on(&apos;speak&apos;, function(message) &#123;</div><div class="line">        console.log(person.name + &quot; said: &quot; + message);</div><div class="line">    &#125;)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">xiaoming.emit(&apos;speak&apos;, &apos;hi&apos;);</div><div class="line">lucy.emit(&apos;speak&apos;, &apos;I want a curry&apos;);</div><div class="line"></div><div class="line">// var myEmitter = new events.EventEmitter();    //事件的执行</div><div class="line"></div><div class="line">// myEmitter.on(&apos;someEvent&apos;, function(message) &#123;</div><div class="line">//     console.log(message);</div><div class="line">// &#125;)</div><div class="line"></div><div class="line">// myEmitter.emit(&apos;someEvent&apos;, &apos;the event was emitted&apos;);</div></pre></td></tr></table></figure>
+<p>3.读写文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var fs=require(&apos;fs&apos;)</div><div class="line">var readMe=fs.readFileSync(&quot;文件名&quot;,&quot;utf8&quot;)</div><div class="line">console.log(readMe)</div><div class="line">//新建文件</div><div class="line">fs.writeFileSync(&quot;新建的文件名&quot;,文件内容)</div><div class="line">//Sync是同步的意思</div><div class="line">//因为node.js执行javascript的时候是单线程的,所以如果读取文件较大耗时较长会阻塞线程,这是就要用到异步,用回调函数来解决:</div><div class="line">fs.readFile(&quot;1.txt&quot;,&quot;utf8&quot;,(error,data)=&gt;&#123;</div><div class="line">    console.log(data)</div><div class="line">&#125;)</div><div class="line">console.log(&quot;finish&quot;)</div><div class="line">控制台输出: 先输出finish然后再输出1.txt的data</div></pre></td></tr></table></figure>
+<p>4.服务器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var http=require(&apos;http&apos;)</div><div class="line">var server=http.createSever((request,response)=&gt;&#123;</div><div class="line">    response.writeHead(200,&#123;&apos;Content-Type&apos;:&apos;text/plain&apos;&#125;)// text/plain是纯文本  application/json 是json格式</div><div class="line">    </div><div class="line">    response.write(&apos;Hello&apos;)</div><div class="line">    response.end()</div><div class="line">&#125;)</div><div class="line">sever.listen(3000)</div><div class="line"></div><div class="line">var obj=&#123;name:&apos;wx&apos;,age:12&#125;</div><div class="line">var jsonobj=JSON stringify(obj) //&#123;&quot;name&quot;:&quot;wx&quot;,&quot;age&quot;:12&#125;</div><div class="line">JSON.parse(jsonobj) //&#123;name:&apos;wx&apos;,age:12&#125;</div></pre></td></tr></table></figure>
+<p>4.1 服务器相应html</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">var http = require(&apos;http&apos;);</div><div class="line">var fs = require(&apos;fs&apos;);</div><div class="line"></div><div class="line">function startServer() &#123;</div><div class="line">    var onRequest = function(request, response) &#123;</div><div class="line">        console.log(&apos;Request received&apos;);</div><div class="line">        response.writeHead(200, &#123; &apos;Content-Type&apos;: &apos;text/html&apos; &#125;);</div><div class="line">        var myReadStream = fs.createReadStream(__dirname + &apos;/index.html&apos;, &apos;utf8&apos;);</div><div class="line">        // response.write(&apos;Hello from out application&apos;);</div><div class="line">        myReadStream.pipe(response);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var server = http.createServer(onRequest);</div><div class="line"></div><div class="line">    server.listen(3000, &apos;127.0.0.1&apos;);</div><div class="line">    console.log(&apos;Server started on localhost port 3000&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">exports.startServer = startServer;</div><div class="line"></div><div class="line">另外的文件直接</div><div class="line">var server=require(&apos;./server)</div><div class="line">server.startServer()</div></pre></td></tr></table></figure>
+<p>5.express连接并操作mongoose</p>
+<p>post.js:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var mongoose = require(&apos;mongoose&apos;)</div><div class="line">var Schema = mongoose.Schema</div><div class="line">const DB_URL=&apos;mongodb://localhost:27017/AkingBlog&apos;</div><div class="line">mongoose.connect(DB_URL)</div><div class="line">mongoose.connection.on(&apos;connected&apos;,()=&gt;&#123;</div><div class="line">  console.log(&apos;mongo连上了&apos;)</div><div class="line">&#125;)</div><div class="line">var PostSchema=new Schema(&#123;</div><div class="line">  title:&#123;type:String,require:true&#125;,</div><div class="line">&#125;)</div><div class="line">module.exports=mongoose.model(&apos;Post&apos;,PostSchema)</div></pre></td></tr></table></figure>
+<p>server.js:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">const express = require(&apos;express&apos;)</div><div class="line">const Post =require(&apos;../models/post&apos;)</div><div class="line">const app = express()</div><div class="line">Post.create(&#123;title:&apos;wangxin&apos;&#125;)</div><div class="line">Post.findOne(&#123;&#125;,(err,doc)=&gt;&#123;</div><div class="line">  console.log(doc)</div><div class="line">&#125;)</div><div class="line">app.listen(3333, function () &#123;</div><div class="line">  console.log(&apos;启动3333端口&apos;)</div><div class="line">&#125;)</div><div class="line">//出现Json</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/25/axios+express/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/25/做博客网站踩过的坑.../" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDcxMi83MjY2"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/12.jpg"
+              alt="王 鑫" />
+          
+            <p class="site-author-name" itemprop="name">王 鑫</p>
+            <p class="site-description motion-element" itemprop="description">锻炼身体，磨砺思想</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/akingwangx" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/p/1005055284997196/home?from=page_100505&mod=TAB&is_all=1#place" target="_blank" title="FB Page">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xdmdpz.github.io/" title="IF" target="_blank">IF</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王 鑫</span>
+
+  
+</div>
+
+
+  
+
+  <span class="post-meta-divider"></span>
+
+  
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
