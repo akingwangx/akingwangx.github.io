@@ -1819,7 +1819,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #69ff55;
+  background: #e76371;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2972,7 +2972,7 @@ pre .javascript .function {
 }
 .site-meta {
   margin-top: 14px;
-  background: url("https://raw.githubusercontent.com/fi3ework/hexo-theme-archer/master/source/intro/intro-desktop.jpg");
+  background: url("http://ovwvaynot.bkt.clouddn.com/intro-desktop.jpg");
   background-size: 100%;
   opacity: 0.8;
 }
