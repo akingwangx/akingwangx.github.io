@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="面试," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1.字符串大小写转换： 12str=str.toUpperCase() //大写str=str.toLowerCase() //小写 2.查找 1234567var i=str.indexOf(&amp;apos;关键词&amp;apos;)var i=str.search(正则)var arr=str.match(正则)reg.exec() 3.匿名函数 定义函数时,不指定函数名(为了节约内层或划分临时作用域)">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总结了一些面试题">
+<meta property="og:url" content="http://yoursite.com/2018/04/07/面试考点/index.html">
+<meta property="og:site_name" content="Aking&#39;s Blog">
+<meta property="og:description" content="1.字符串大小写转换： 12str=str.toUpperCase() //大写str=str.toLowerCase() //小写 2.查找 1234567var i=str.indexOf(&amp;apos;关键词&amp;apos;)var i=str.search(正则)var arr=str.match(正则)reg.exec() 3.匿名函数 定义函数时,不指定函数名(为了节约内层或划分临时作用域)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-07T14:28:51.130Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="总结了一些面试题">
+<meta name="twitter:description" content="1.字符串大小写转换： 12str=str.toUpperCase() //大写str=str.toLowerCase() //小写 2.查找 1234567var i=str.indexOf(&amp;apos;关键词&amp;apos;)var i=str.search(正则)var arr=str.match(正则)reg.exec() 3.匿名函数 定义函数时,不指定函数名(为了节约内层或划分临时作用域)">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/07/面试考点/"/>
+
+
+
+
+
+  <title>总结了一些面试题 | Aking's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aking's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-面试" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/07/面试考点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王 鑫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/12.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aking's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">总结了一些面试题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T22:28:09+08:00">
+                2018-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>1.字符串大小写转换：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">str=str.toUpperCase() //大写</div><div class="line">str=str.toLowerCase() //小写</div></pre></td></tr></table></figure>
+<p><strong>2.查找</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var i=str.indexOf(&apos;关键词&apos;)</div><div class="line"></div><div class="line">var i=str.search(正则)</div><div class="line"></div><div class="line">var arr=str.match(正则)</div><div class="line"></div><div class="line">reg.exec()</div></pre></td></tr></table></figure>
+<p><strong>3.匿名函数</strong></p>
+<p>定义函数时,不指定函数名(为了节约内层或划分临时作用域)</p>
+<p>怎么用?: 回调:定义函数后自己不调用,而是传递给另一个函数去调用</p>
+<p>​               自调:定义函数后,立刻调用自己(今后所有js代码必须都放在匿名函数自调中,避免全局污染)</p>
+<p><strong>4.作用域和作用域链</strong></p>
+<p>作用域:一个变量的可用范围,作用域可以避免内部的变量影响外部,本质上是一个存储变量的对象,</p>
+<p>包括全局作用域:window,保存全局变量:随处可用,可以反复使用.</p>
+<p>函数作用域:保存局部变量,仅在函数内可用,且不可重用</p>
+<p>作用域链:保存所有变量 控制着变量的使用顺序(我理解是从内往上找)</p>
+<p><strong>5.闭包closure</strong></p>
+<p>即重用一个变量,又保护变量不被污染的一种机制,全局变量和局部变量都具有不可兼得的优缺点,所以就用闭包  全局变量的优点是可以重用 缺点是易被污染,局部变量的优点是仅函数内部可用,不会被污染</p>
+<p>当你要使用一个变量,可能被重复使用又不想被篡改的时候用</p>
+<p>1.用外侧函数包裹要保护的变量和内层函数</p>
+<p>2.外层函数将内层函数返回到外部</p>
+<p>3.调用外层函数,获得内层函数的对象,保存在外部的变量中-形成了闭包</p>
+<p>闭包形成的原因:外层函数调用后,外层函数的函数作用域对象无法释放,主动形成闭包为一个函数绑定了专属的变量</p>
+<p>视频中的回答:JS每一个函数会形成独立的作用域,作用域内的函数可以访问同一个作用域内的变量,并且它如果找不到这个变量就会一直像上层去寻找,直到找到最外层的window,如果没有 返回undefined</p>
+<p><strong>6.对象OOP</strong> </p>
+<p>即内存中存储多个数据的独立存储空间都成为一个对象</p>
+<p>面向对象的概念是程序中都是用对象结构来描述现实中一个具体事物(为了便于大量数据的维护和查找</p>
+<p>)</p>
+<p>何时: 几乎所有js程序，都使用面向对象的方式开发<br>如何: 三大特点: 封装，继承，多态<br>封装: 用对象来集中描述现实中一个具体事物的属性和功能<br>为什么: 便于维护和查找<br>何时: 今后只要使用面向对象的方式开发，都要先封装对象，再按需使用对象的属性和功能。<br>如何: 3种:</p>
+<ol>
+<li><p>用{}:<br>var obj={<br>属性名:值,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">... : ... ,</div></pre></td></tr></table></figure>
+<p>//方法名:function(){…},<br>方法名 (){…},<br>}<br>其中: 事物的属性值会成为对象的属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   对象的属性本质是保存在对象中的一个变量</div><div class="line">事物的功能会成为对象的方法!</div><div class="line">   方法的本质是保存在对象中的一个函数</div></pre></td></tr></table></figure>
+<p>如何访问对象的成员:<br>访问对象的属性: 对象.属性名<br>调用对象的方法: 对象.方法名()<br>问题: 对象自己的方法中要使用对象自己的属性<br>错误: 直接用属性名,报错: 找不到变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">为什么: 默认，不加.就使用的变量，只能在作用域链中查找，无法自动进入对象中</div></pre></td></tr></table></figure>
+<p>解决一: 对象名.属性名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">问题: 对象名仅是一个普通的变量名，可能发生变化。</div></pre></td></tr></table></figure>
+<p>正确解决: this.属性名<br>this: 自动指正在调用当前方法的.前的对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">为什么: 不受对象名变量的影响</div><div class="line">何时: 只要对象自己的方法向访问对象自己的属性时，都必须加this.</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>js中对象的本质，其实就是一个关联数组</p>
+<ol>
+<li>用new:<br>var obj=new Object(); //创建空对象 等效于{}<br>obj.属性名=值;<br>obj.方法名=function(){<br>… this.属性名 …<br>}</li>
+</ol>
+<p>和关联数组一样，js中的对象也可随时添加新属性和方法。<br>问题: 反复创建多个相同结构的对象时，重复代码太多，导致不便于维护<br>解决:</p>
+<ol>
+<li><p>用构造函数:<br>构造函数: 描述一类对象统一结构的函数<br>为什么: 为了重用结构代码!<br>何时: 只要反复创建相同结构的多个对象时，都用构造函数<br>如何: 2步:</p>
+<ol>
+<li><p>定义构造函数<br>function 类型名(属性参数列表){<br>this.属性名=属性参数;<br>this. … = 属性参数;<br>this.方法名=function(){</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">this.xxx</div></pre></td></tr></table></figure>
+<p>}<br>}</p>
+</li>
+<li><p>调用构造函数创建新对象<br>var obj=new 类型名(属性值列表)<br>new: 1. 创建新的空对象</p>
+<ol>
+<li>设置新对象继承构造函数的原型对象<ol>
+<li>用新对象调用构造函数<br>将构造函数中的this都指向新对象</li>
+<li>返回新对象的地址</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>问题: 构造函数只能重用代码，无法节约内存? 继承</p>
+<p><strong>7.继承</strong></p>
+<p>什么是: 父对象的成员，子对象无需创建，就可直接使用<br>为什么: 代码重用，节约内存<br>何时: 只要多个子对象，拥有相同的成员时，都应只在父对象中定义一份，所有子对象共用即可！<br>如何: js中继承都是通过原型对象实现的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">什么是原型对象: 集中存储同一类型的所有子对象，共用成员的父对象</div><div class="line">何时: 只要继承，必然原型对象</div><div class="line">如何: </div><div class="line"> 创建: 不用创建，买一赠一</div><div class="line">   每创建一个构造函数，都附赠一个原型对象 </div><div class="line"> 继承: 在创建子对象时，new的第2步自动设置子对象继承构造函数的原型对象</div><div class="line"> 访问成员: 优先访问自有成员</div><div class="line">          自己没有，就去父对象(原型对象)中查找</div><div class="line"> 将成员添加到原型对象中: </div><div class="line">  构造函数.prototype.成员=值</div></pre></td></tr></table></figure>
+<p>自有属性和共有属性:<br>自有属性: 保存在当前对象本地,仅归当前对象独有的属性<br>共有属性: 保存在父对象中，所有子对象共有的属性<br>读取属性值: 子对象.属性<br>修改属性值: 自有属性，必须通过子对象自己修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">共有属性，只能用原型对象修改！</div></pre></td></tr></table></figure>
+<p><strong>8.原型链</strong></p>
+<p>什么是:由多级父对象,逐级继承形成的链式结构</p>
+<p>保存着所有对象的属性</p>
+<p>控制着对象属性的使用顺序(先自有&gt;再公有)</p>
+<p>如何判断一个对象是数组类型?有几种方法</p>
+<p>判断原型对象:</p>
+<p>1.obj._proto__==Array.prototype  看对象的隐式原型指不指向Array.prototype</p>
+<p>2.Array.prototype.isPrototypeOf(obj)</p>
+<p>判断构造函数:</p>
+<p>1.obj.constructor==Array  看对象的构造函数是不指向Array</p>
+<p>2.obj instanceof Array</p>
+<p><strong>9.严格模式 ‘user strict’</strong></p>
+<p>比普通js运行要求更严格的模式,</p>
+<p>1.禁止给未声明的变量赋值</p>
+<p>2.将静默失败升级为错误</p>
+<p>3.普通函数或匿名函数自调中的this默认不再指向window,而是undefined</p>
+<p>4.禁止使用arguments, arguments.callee,…</p>
+<p>补: arguments.callee 自动获得当前正在调用的函数本身<br>禁用，说明强烈不推荐使用递归！</p>
+<p><strong>10.call/apply/bind</strong></p>
+<p>替换函数中不想要的this！<br>call/apply: 立刻调用函数，并临时替换中的this为指定对象<br>何时: 只要调用函数时，函数中的this不是想要的就用call换成想要的<br>如果传入函数的参数，是以数组形式，整体传入<br>就用.apply(obj,arr)<br>bind: 基于原函数，创建一个新函数，并永久绑定this为指定对象<br>何时: 不会立刻调用的函数(回调函数)中的this，不是想要的，就可用bind创建一个新函数，并永久绑定this！</p>
+<p><strong>11.数组API</strong></p>
+<p>判断:</p>
+<ol>
+<li><p>判断数组中所有元素是否都符合条件<br>arr.every(function(elem,i,arr){</p>
+<p>​</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//elem: 当前元素值</div><div class="line">//i: 当前位置 </div><div class="line">//arr: 当前数组对象</div><div class="line">return 判断条件</div></pre></td></tr></table></figure>
+<p>})</p>
+</li>
+<li><p>判断数组中是否包含符合条件的元素<br>arr.some(function(elem,i,arr){</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return 判断条件</div></pre></td></tr></table></figure>
+<p>})</p>
+</li>
+</ol>
+<p>遍历:</p>
+<ol>
+<li>forEach: 对原数组中每个元素执行相同的操作<br>arr.forEach(function(elem,i,arr){<br>arr[i]=新值<br>})</li>
+<li>map: 依次取出原数组中每个元素执行相同操作后，放入新数组。原数组不变<br>arr.map(function(elem,i,arr){<br>return 新值<br>})</li>
+</ol>
+<p>过滤和汇总:</p>
+<ol>
+<li>过滤: 复制出原数组中符合条件的元素，放入新数组返回<br>var subs=arr.filter(function(elem,i,arr){<br>return 判断条件<br>})</li>
+<li>汇总: 将原数组中所有值统计出一个最终结论<br>var result=arr.reduce(function(prev,elem,i,arr){<br>//prev: 截止到目前，之前的临时汇总值<br>return prev+elem;<br>})</li>
+</ol>
+<p><strong>12.this</strong></p>
+<p>指向执行函数的<strong>对象</strong>,</p>
+<p>有哪些事件默认是不冒泡的? 表单里的事件偏多:</p>
+<p><strong>13.http原理(一次请求都发生了什么?)</strong></p>
+<p>答:我们输入网址敲下回车后,浏览器像DNS服务器发起请求去解析域名,解析到域名之后获得一个IP地址,这个IP像IP地址服务器去发起请求,http协议是基于TCP/IP协议的,然后就是三次握手后服务器收到请求后会对请求进行解析,如果是一个大型网站,前端会有一个网关,网关会进行负载均衡:他会判断我们的请求是否可以走缓存,如果不可以走缓存它会把请求交给后端负责处理请求的服务器进行处理(包括建立缓存,访问数据库什么的),最终生成一个页面,这个页面交还给=&gt;网关=&gt;浏览器 然后浏览器渲染,加载资源,如果是我们React单页应用,有的用了服务端渲染,就直接服务端把html给打出来,如果没有用服务端渲染,要再去服务器取一遍数据,如果这个页面支持PWA,它可以把网页转换本地应用,会建立一个本地应用版本,下次直接请求数据就可以了.</p>
+<p><strong>14.前后端数据交互有哪些方法?</strong></p>
+<p>最早是iframe ajax fetch axios websocket</p>
+<p><strong>15.数组去重</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> let array = [1, 1, 1, 1, 2, 3, 4, 4, 5, 3]</div><div class="line"> let set = new Set(array)</div><div class="line"> alert(Array.from(set))</div><div class="line">es6的Set 对象允许你存储任何类型的唯一值，无论是原始值或者是对象引用。</div><div class="line">Array.from() 方法从一个类似数组或可迭代对象中创建一个新的数组实例。</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/01/做博客网站踩过的坑.../" rel="next" title="做博客网站踩过的坑">
+                <i class="fa fa-chevron-left"></i> 做博客网站踩过的坑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDcxMi83MjY2"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/12.jpg"
+              alt="王 鑫" />
+          
+            <p class="site-author-name" itemprop="name">王 鑫</p>
+            <p class="site-description motion-element" itemprop="description">锻炼身体，磨砺思想</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/akingwangx" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/p/1005055284997196/home?from=page_100505&mod=TAB&is_all=1#place" target="_blank" title="FB Page">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xdmdpz.github.io/" title="IF" target="_blank">IF</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王 鑫</span>
+
+  
+</div>
+
+
+  
+
+  <span class="post-meta-divider"></span>
+
+  
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
